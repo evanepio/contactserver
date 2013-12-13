@@ -17,14 +17,10 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-resource.js"></script>
         
         <script>
-            function ContactsController($scope) {
-                $scope.contacts = [{
-                    name: 'example',
-                    phone: '555-9876'
-                }, {
-                    title: 'Jor El',
-                    phone: '555-KRPT'
-                }];
+            function ContactsController($scope, $http) {
+                $http.get('/contacts').success(function(data, status, headers, config) {
+                    $scope.contacts = data;    
+                });
             }
         </script>
     </body>
