@@ -1,0 +1,48 @@
+
+var contacts = [
+    {name: "Alice", phone:"555-1234"},
+    {name: "Bob", phone:"555-4321"},
+    {name: "Carol", phone:"555-5678"},
+    {name: "Dave", phone:"555-8765"}
+];
+
+
+exports.displayAllContacts = function(req, res) {
+  res.json(contacts);
+};
+
+exports.displayContact = function(req, res) {
+  if(contacts.length <= req.params.id || req.params.id < 0) {
+    res.statusCode = 404;
+    return res.send('Error 404: No contact found');
+  }
+
+  var contact = contacts[req.params.id];
+  res.json(contact);
+};
+
+exports.postNewContact = function(req, res) {
+  if(!req.body.hasOwnProperty('name') || 
+     !req.body.hasOwnProperty('phone')) {
+    res.statusCode = 400;
+    return res.send('Error 400: Post syntax incorrect.');
+  }
+
+  var newContact = {
+    name : req.body.name,
+    phone : req.body.phone
+  };
+
+  contacts.push(newContact);
+  res.json(true);
+};
+
+exports.deleteContact = function(req, res) {
+  if(contacts.length <= req.params.id) {
+    res.statusCode = 404;
+    return res.send('Error 404: No contact found');
+  }
+
+  contacts.splice(req.params.id, 1);
+  res.json(true);
+};

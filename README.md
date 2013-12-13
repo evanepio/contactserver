@@ -1,0 +1,1 @@
+This is just a simple example to learn the MEAN stack.
