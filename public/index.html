@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+    
+    <head>
+        <title>Contacts</title>
+    </head>
+    
+    <body ng-controller='ContactsController'>
+        <h1>Contacts</h1>
+        <div ng-repeat='contact in contacts'>
+            <span>{{contact.name}}</span> has this phone number:
+            <span>{{contact.phone}}</span>
+        </div>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-resource.js"></script>
+        
+        <script>
+            function ContactsController($scope) {
+                $scope.contacts = [{
+                    name: 'example',
+                    phone: '555-9876'
+                }, {
+                    title: 'Jor El',
+                    phone: '555-KRPT'
+                }];
+            }
+        </script>
+    </body>
+
+</html>
