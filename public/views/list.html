@@ -1,3 +1,4 @@
-<div>This is the list template</div>
+<p>This is the list template</p>
 
-<div ng-repeat="contact in contacts">Call <strong>{{contact.name}}</strong> at <strong>{{contact.phone}}</strong>.</div>
+<div ng-repeat="contact in contacts"><a ng-href="#/view/{{$index}}">{{contact.name}}</a></strong></div>
+<!-- It should be ng-href should use contact.id and not $index, but I'm not using ngReousrce for REST calls yet. -->
