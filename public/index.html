@@ -1,28 +1,19 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="contactserverApp">
     
     <head>
         <title>Contacts</title>
     </head>
     
-    <body ng-controller='ContactsController'>
+    <body>
         <h1>Contacts</h1>
-        <div ng-repeat='contact in contacts'>
-            <span>{{contact.name}}</span> has this phone number:
-            <span>{{contact.phone}}</span>
-        </div>
+        <div ng-view></div>
         
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-resource.js"></script>
         
-        <script>
-            function ContactsController($scope, $http) {
-                $http.get('/contacts').success(function(data, status, headers, config) {
-                    $scope.contacts = data;    
-                });
-            }
-        </script>
+        <script src="scripts/app.js"></script>
     </body>
 
 </html>
