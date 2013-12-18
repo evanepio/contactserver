@@ -6,7 +6,7 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/', {
         controller: 'ContactListCtrl',
-        templateUrl: 'views/list.html'
+        templateUrl: 'views/view_contact_list.html'
     }).when('/view/:contactId', {
         controller: 'ContactCtrl',
         templateUrl: 'views/view_contact.html'
