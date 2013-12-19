@@ -25,10 +25,8 @@ app.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
-app.controller('ContactListCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get('/contacts').success(function(data, status, headers, config) {
-        $scope.contacts = data;
-    });
+app.controller('ContactListCtrl', ['$scope', 'contacts', function($scope, contacts) {
+    $scope.contacts = contacts;
 }]);
 
 app.controller('ContactViewCtrl', ['$scope', 'contact', function($scope, contact) {
