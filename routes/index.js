@@ -1,9 +1,9 @@
 
 var contacts = [
-    {name: "Alice", phone:"555-1234"},
-    {name: "Bob", phone:"555-4321"},
-    {name: "Carol", phone:"555-5678"},
-    {name: "Dave", phone:"555-8765"}
+    {id: 0, name: "Alice", phone:"555-1234"},
+    {id: 1, name: "Bob", phone:"555-4321"},
+    {id: 2, name: "Carol", phone:"555-5678"},
+    {id: 3, name: "Dave", phone:"555-8765"}
 ];
 
 

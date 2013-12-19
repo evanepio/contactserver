@@ -1,4 +1,3 @@
 <p>This is the list template</p>
 
-<div ng-repeat="contact in contacts"><a ng-href="#/view/{{$index}}">{{contact.name}}</a></strong></div>
-<!-- It should be ng-href should use contact.id and not $index, but I'm not using ngReousrce for REST calls yet. -->
+<div ng-repeat="contact in contacts"><a ng-href="#/view/{{contact.id}}">{{contact.name}}</a></strong></div>
