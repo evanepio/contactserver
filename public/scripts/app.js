@@ -43,6 +43,10 @@ app.controller('ContactViewCtrl', ['$scope', '$location', 'contact', function($s
     $scope.edit = function() {
         $location.path('/edit/' + contact.id);
     };
+    
+    $scope.backToList = function() {
+        $location.path('/');
+    }
 }]);
 
 app.controller('ContactEditCtrl', ['$scope', '$location', 'contact', function($scope, $location, contact) {

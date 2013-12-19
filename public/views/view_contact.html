@@ -1,9 +1,9 @@
-<div>This is a single contact view.</div>
-<div>{{contact.name}} can be reached at {{contact.phone}}</div>
-<div><a href="#/">Back</a></div>
+<p>This is a single contact view.</p>
+<p>{{contact.name}} can be reached at {{contact.phone}}</p>
 
 <form ng-submit="edit()" class="form-horizontal">
     <div class="form-actions">
         <button class="btn btn-primary">Edit</button>
+        <button type="button" ng-click="backToList()" class="btn">Back to List</button>
     </div>
 </form>
