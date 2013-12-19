@@ -20,6 +20,14 @@ app.config(['$routeProvider', function($routeProvider) {
             }
         },
         templateUrl: 'views/view_contact.html'
+    }).when('/edit/:contactId', {
+        controller: 'ContactEditCtrl',
+        resolve: {
+            contact: function(ContactLoader) {
+                return ContactLoader();
+            }
+        },
+        templateUrl: 'views/edit_contact.html'
     }).otherwise({
         redirectTo: '/'
     });
@@ -29,6 +37,26 @@ app.controller('ContactListCtrl', ['$scope', 'contacts', function($scope, contac
     $scope.contacts = contacts;
 }]);
 
-app.controller('ContactViewCtrl', ['$scope', 'contact', function($scope, contact) {
+app.controller('ContactViewCtrl', ['$scope', '$location', 'contact', function($scope, $location, contact) {
     $scope.contact = contact;
+    
+    $scope.edit = function() {
+        $location.path('/edit/' + contact.id);
+    };
+}]);
+
+app.controller('ContactEditCtrl', ['$scope', '$location', 'contact', function($scope, $location, contact) {
+    $scope.contact = contact;
+    
+    
+    $scope.save = function() {
+        $scope.contact.$save(function(contact) {
+            $location.path('/view/' + contact.id);
+        });
+    };
+    
+    $scope.remove = function() {
+        delete $scope.contact;
+        $location.path('/');
+    };
 }]);
