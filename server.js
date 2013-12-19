@@ -11,6 +11,8 @@ app.get('/contacts/:id', routes.displayContact);
 
 app.post('/contacts', routes.postNewContact);
 
+app.post('/contacts/:id', routes.updateContact);
+
 app.delete('/contacts/:id', routes.deleteContact);
 
 app.use("/", express.static(__dirname + '/public'));

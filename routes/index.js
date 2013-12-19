@@ -37,6 +37,20 @@ exports.postNewContact = function(req, res) {
   res.json(true);
 };
 
+exports.updateContact = function(req, res) {
+  if(contacts.length <= req.params.id || req.params.id < 0) {
+    res.statusCode = 404;
+    return res.send('Error 404: No contact found');
+  }
+  
+  var contact = contacts[req.params.id];
+  
+  contact.name = req.body.name;
+  contact.phone = req.body.phone;
+  
+  res.json(contact);
+};
+
 exports.deleteContact = function(req, res) {
   if(contacts.length <= req.params.id) {
     res.statusCode = 404;
