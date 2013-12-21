@@ -1,9 +1,8 @@
-<p>This is a single contact edit form.</p>
 <p>{{contact.name}} can be reached at {{contact.phone}}</p>
 
 <form ng-submit="save()" class="form-horizontal">
     
-  <div class="control-group">
+  <div name="contactForm" class="control-group">
     <label class="control-label" for="name">Name:</label>
     <div class="controls">
       <input ng-model="contact.name" id="name" />
@@ -18,7 +17,7 @@
   </div>
   
   <div class="form-actions">
-    <button class="btn btn-primary" ng-disabled="recipeForm.$invalid">Save</button>
-    <button type="button" ng-click="remove()" ng-show="!recipe.id" class="btn">Delete</button>
+    <button class="btn btn-primary" ng-disabled="contactForm.$invalid">Save</button>
+    <button type="button" ng-click="remove()" ng-show="contact.id" class="btn">Delete</button>
   </div>
 </form>
