@@ -35,7 +35,7 @@ exports.postNewContact = function(req, res) {
   };
 
   contacts.push(newContact);
-  res.json(true);
+  res.json(newContact);
 };
 
 exports.updateContact = function(req, res) {
