@@ -11,7 +11,7 @@ app.config(['$routeProvider', function($routeProvider) {
                 return MultiContactLoader();
             }
         },
-        templateUrl: 'views/view_contact_list.html'
+        templateUrl: 'views/contact_list.html'
     }).when('/view/:contactId', {
         controller: 'ContactViewCtrl',
         resolve: {
@@ -19,7 +19,7 @@ app.config(['$routeProvider', function($routeProvider) {
                 return ContactLoader();
             }
         },
-        templateUrl: 'views/view_contact.html'
+        templateUrl: 'views/contact.html'
     }).when('/edit/:contactId', {
         controller: 'ContactEditCtrl',
         resolve: {
@@ -27,10 +27,10 @@ app.config(['$routeProvider', function($routeProvider) {
                 return ContactLoader();
             }
         },
-        templateUrl: 'views/edit_contact.html'
+        templateUrl: 'views/contact_form.html'
     }).when('/new', {
         controller: 'ContactNewCtrl',
-        templateUrl: 'views/edit_contact.html'
+        templateUrl: 'views/contact_form.html'
     }).otherwise({
         redirectTo: '/'
     });
