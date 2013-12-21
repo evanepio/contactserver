@@ -28,6 +28,9 @@ app.config(['$routeProvider', function($routeProvider) {
             }
         },
         templateUrl: 'views/edit_contact.html'
+    }).when('/new', {
+        controller: 'ContactNewCtrl',
+        templateUrl: 'views/edit_contact.html'
     }).otherwise({
         redirectTo: '/'
     });
@@ -64,3 +67,13 @@ app.controller('ContactEditCtrl', ['$scope', '$location', 'contact', function($s
         $location.path('/');
     };
 }]);
+
+app.controller('ContactNewCtrl', ['$scope', '$location', 'Contact', function($scope, $location, Contact) {
+    $scope.contact = new Contact();
+    
+    $scope.save = function() {
+        $scope.contact.$save(function(contact) {
+            $location.path('/view/' + contact.id);
+        });
+    };
+}])

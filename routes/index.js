@@ -30,7 +30,8 @@ exports.postNewContact = function(req, res) {
 
   var newContact = {
     name : req.body.name,
-    phone : req.body.phone
+    phone : req.body.phone,
+    id: contacts.length
   };
 
   contacts.push(newContact);
