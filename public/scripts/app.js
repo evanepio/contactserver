@@ -73,7 +73,7 @@ app.controller('ContactNewCtrl', ['$scope', '$location', 'Contact', function($sc
     
     $scope.save = function() {
         $scope.contact.$save(function(contact) {
-            $location.path('/view/' + contact.id);
+            $location.path('/');
         });
     };
 }])
