@@ -44,7 +44,7 @@ app.controller('ContactViewCtrl', ['$scope', '$location', 'contact', function($s
     $scope.contact = contact;
     
     $scope.edit = function() {
-        $location.path('/edit/' + contact.id);
+        $location.path('/edit/' + contact._id);
     };
     
     $scope.backToList = function() {
@@ -58,7 +58,7 @@ app.controller('ContactEditCtrl', ['$scope', '$location', 'contact', function($s
     
     $scope.save = function() {
         $scope.contact.$save(function(contact) {
-            $location.path('/view/' + contact.id);
+            $location.path('/view/' + contact._id);
         });
     };
     
@@ -73,7 +73,7 @@ app.controller('ContactNewCtrl', ['$scope', '$location', 'Contact', function($sc
     
     $scope.save = function() {
         $scope.contact.$save(function(contact) {
-            $location.path('/view/' + contact.id);
+            $location.path('/view/' + contact._id);
         });
     };
 }]);
