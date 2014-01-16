@@ -55,7 +55,6 @@ app.controller('ContactViewCtrl', ['$scope', '$location', 'contact', function($s
 app.controller('ContactEditCtrl', ['$scope', '$location', 'contact', function($scope, $location, contact) {
     $scope.contact = contact;
     
-    
     $scope.save = function() {
         $scope.contact.$save(function(contact) {
             $location.path('/view/' + contact._id);
