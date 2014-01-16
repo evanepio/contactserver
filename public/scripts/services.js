@@ -5,8 +5,8 @@ var services = angular.module('contactserverApp.services', ['ngResource']);
 services.factory('Contact', ['$resource',
 
 function($resource) {
-    return $resource('/contacts/:id', {
-        id: '@id'
+    return $resource('/contacts/:_id', {
+        _id: '@_id'
     });
 }]);
 
@@ -30,7 +30,7 @@ function(Contact, $route, $q) {
     return function() {
         var delay = $q.defer();
         Contact.get({
-            id: $route.current.params.contactId
+            _id: $route.current.params.contactId
         }, function(contact) {
             delay.resolve(contact);
         }, function() {
