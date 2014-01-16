@@ -62,8 +62,9 @@ app.controller('ContactEditCtrl', ['$scope', '$location', 'contact', function($s
     };
     
     $scope.remove = function() {
-        delete $scope.contact;
-        $location.path('/');
+        $scope.contact.$remove(function() {
+            $location.path('/');
+        });
     };
 }]);
 
