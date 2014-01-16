@@ -3,13 +3,6 @@
 var ContactProvider = require('../data').ContactProvider;
 var contactData = new ContactProvider('localhost', 27017);
 
-// var contacts = [
-//     {id: 0, name: "Alice", phone:"555-1234"},
-//     {id: 1, name: "Bob", phone:"555-4321"},
-//     {id: 2, name: "Carol", phone:"555-5678"},
-//     {id: 3, name: "Dave", phone:"555-8765"}
-// ];
-
 exports.displayAllContacts = function(req, res) {
     contactData.findAll(function(error, contacts) {
         res.json(contacts);
